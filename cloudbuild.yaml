@@ -1,0 +1,12 @@
+steps:
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    dir: function
+    entrypoint: gcloud
+    args:
+      - functions
+      - deploy
+      - webp-to-jpeg
+      - --gen2
+      - --region=${_REGION}
+substitutions:
+  _REGION: us-central1
